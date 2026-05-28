@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NGO Dashboard</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:#f4f6fb;
+        }
+
+        .container{
+            width:90%;
+            max-width:1300px;
+            margin:40px auto;
+            background:white;
+            border-radius:20px;
+            padding:40px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .dashboard{
+            display:flex;
+            gap:40px;
+            align-items:flex-start;
+        }
+
+        .left-panel{
+            width:280px;
+            text-align:center;
+            padding-top:100px;
+        }
+
+        .left-panel h1{
+            color:#1e3a8a;
+            font-size:50px;
+            line-height:60px;
+        }
+
+        .ngo-name{
+            margin-top:30px;
+            font-size:20px;
+            font-weight:bold;
+            color:green;
+            line-height:35px;
+        }
+
+        .right-panel{
+            flex:1;
+        }
+
+        .table-box{
+            overflow-x:auto;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+        }
+
+        thead{
+            background:#2563eb;
+            color:white;
+        }
+
+        thead th{
+            padding:18px;
+            text-align:center;
+            font-size:18px;
+        }
+
+        tbody td{
+            padding:25px 15px;
+            text-align:center;
+            border-bottom:1px solid #ddd;
+            font-size:17px;
+        }
+
+        .status{
+            color:#f59e0b;
+            font-weight:bold;
+            line-height:28px;
+        }
+
+        .btn{
+            border:none;
+            padding:10px 22px;
+            border-radius:8px;
+            color:white;
+            cursor:pointer;
+            font-size:15px;
+            margin:5px;
+        }
+
+        .accept{
+            background:#16a34a;
+        }
+
+        .deny{
+            background:#dc2626;
+        }
+
+        .volunteer-card{
+            margin-top:35px;
+            background:#f9fafb;
+            padding:25px;
+            border-radius:15px;
+            border:1px solid #ddd;
+        }
+
+        .volunteer-card h3{
+            margin-bottom:20px;
+            color:#1e3a8a;
+        }
+
+        .details{
+            display:grid;
+            grid-template-columns:repeat(2,1fr);
+            gap:20px;
+        }
+
+        .detail-box{
+            background:white;
+            padding:15px;
+            border-radius:10px;
+            box-shadow:0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .detail-box span{
+            font-weight:bold;
+            color:#2563eb;
+        }
+
+        @media(max-width:900px){
+
+            .dashboard{
+                flex-direction:column;
+            }
+
+            .left-panel{
+                width:100%;
+                padding-top:0;
+            }
+
+            .details{
+                grid-template-columns:1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="dashboard">
+
+        <!-- LEFT SIDE -->
+        <div class="left-panel">
+
+            <h1>NGO<br>Dashboard</h1>
+
+            <div class="ngo-name">
+                Connected NGO :<br>
+                Akshaya Patra Foundation
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+        <div class="right-panel">
+
+            <div class="table-box">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Food</th>
+                            <th>Quantity</th>
+                            <th>Location</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        {% for food in foods %}
+
+                        <tr>
+
+                            <td>{{food.food_name}}</td>
+
+                            <td>{{food.quantity}}</td>
+
+                            <td>{{food.location}}</td>
+
+                            <td>
+                                <a href="/accept/{{ food.id }}">
+                                  <button class="accept-btn">Accept</button>
+                                </a>
+
+                                <a href="/reject/{{ food.id }}">
+                                  <button class="deny-btn">Deny</button>
+                                </a>
+                            </td>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- Volunteer Details -->
+            <div class="volunteer-card">
+
+                <h3>Volunteer Details</h3>
+
+                <div class="details">
+
+                    <div class="detail-box">
+                        <span>Name :</span><br>
+                        Rahul Kumar
+                    </div>
+
+                    <div class="detail-box">
+                        <span>Contact :</span><br>
+                        9876543210
+                    </div>
+
+                    <div class="detail-box">
+                        <span>Vehicle :</span><br>
+                        Bike
+                    </div>
+
+                    <div class="detail-box">
+                        <span>Live Location :</span><br>
+                        Hulimavu, Bangalore
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,361 @@
+body{
+background:#f4f6f9;
+font-family:Arial;
+}
+
+.box{
+width:350px;
+margin:auto;
+margin-top:100px;
+padding:20px;
+background:white;
+border-radius:10px;
+box-shadow:0 0 10px gray;
+text-align:center;
+}
+
+input,select{
+width:90%;
+padding:10px;
+margin:10px;
+}
+
+button{
+padding:10px 20px;
+background:green;
+color:white;
+border:none;
+}.form-container{
+    width:400px;
+    margin:auto;
+    margin-top:60px;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0px 0px 15px rgba(0,0,0,0.2);
+}
+
+.form-container h1{
+    text-align:center;
+    color:#1e3a8a;
+    margin-bottom:25px;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+}
+
+form input{
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+}
+
+form button{
+    padding:12px;
+    background:#16a34a;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+form button:hover{
+    background:#15803d;
+}
+.ngo-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:#f4f7fc;
+}
+
+.ngo-card{
+    width:80%;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0px 0px 15px rgba(0,0,0,0.2);
+}
+
+.ngo-card h2{
+    text-align:center;
+    color:#1e3a8a;
+    margin-bottom:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table th{
+    background:#2563eb;
+    color:white;
+    padding:15px;
+}
+
+table td{
+    text-align:center;
+    padding:12px;
+    border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+    background:#f1f5f9;
+}
+
+h1{
+    text-align:center;
+    color:#1e3a8a;
+    margin-bottom:20px;
+}.ngo-container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    margin-top:40px;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0px 0px 15px rgba(0,0,0,0.2);
+}
+
+.ngo-container h1{
+    text-align:center;
+    color:#1e3a8a;
+    margin-bottom:20px;
+}
+
+.ngo-name{
+    text-align:center;
+    font-size:22px;
+    margin-bottom:25px;
+}
+
+.ngo-name span{
+    color:green;
+    font-weight:bold;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table th{
+    background:#2563eb;
+    color:white;
+    padding:15px;
+}
+
+table td{
+    text-align:center;
+    padding:15px;
+    border-bottom:1px solid #ddd;
+}
+
+.status{
+    color:orange;
+    font-weight:bold;
+}
+
+.accept-btn{
+    background:#16a34a;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:6px;
+    cursor:pointer;
+    margin-right:5px;
+}
+
+.deny-btn{
+    background:red;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.accept-btn:hover{
+    background:#15803d;
+}
+
+.deny-btn:hover{
+    background:darkred;
+}
+
+.tracking-box{
+    margin-top:40px;
+    padding:25px;
+    background:#f8fafc;
+    border-radius:12px;
+}
+
+.tracking-box h2{
+    color:#1e3a8a;
+}
+
+.live{
+    color:green;
+    font-weight:bold;
+}
+
+.progress-bar{
+    width:100%;
+    height:20px;
+    background:#ddd;
+    border-radius:20px;
+    margin-top:20px;
+}
+
+.progress{
+    width:70%;
+    height:100%;
+    background:green;
+    border-radius:20px;
+}
+.volunteer-container{
+
+    width:90%;
+    max-width:1100px;
+
+    margin:auto;
+    margin-top:40px;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    box-shadow:0px 0px 15px rgba(0,0,0,0.2);
+}
+
+.volunteer-container h1{
+    text-align:center;
+    color:#1e3a8a;
+    margin-bottom:30px;
+}
+
+.volunteer-card,
+.delivery-card,
+.tracking-card{
+
+    margin-bottom:30px;
+
+    background:#f8fafc;
+
+    padding:25px;
+
+    border-radius:12px;
+}
+
+.volunteer-card h2,
+.delivery-card h2,
+.tracking-card h2{
+
+    color:#2563eb;
+    margin-bottom:20px;
+}
+
+.details p{
+    font-size:18px;
+    margin:10px 0;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table th{
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:15px;
+}
+
+table td{
+
+    text-align:center;
+
+    padding:15px;
+
+    border-bottom:1px solid #ddd;
+}
+
+.delivery-status{
+
+    color:green;
+
+    font-weight:bold;
+}
+
+.progress-bar{
+
+    width:100%;
+
+    height:20px;
+
+    background:#ddd;
+
+    border-radius:20px;
+
+    margin-top:20px;
+}
+
+.progress{
+
+    width:70%;
+
+    height:100%;
+
+    background:green;
+
+    border-radius:20px;
+}
+
+.tracking-text{
+
+    margin-top:15px;
+
+    font-size:16px;
+
+    color:#444;
+}
+body{
+    margin:0;
+    padding:0;
+    height:100vh;
+
+    background-image:url("/static/images/bg.jpeg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.box{
+    background:rgba(255,255,255,0.9);
+    padding:30px;
+    border-radius:15px;
+    width:350px;
+}
+.route-card{
+    margin-top:20px;
+    padding:15px;
+    background:#f5f5f5;
+    border-radius:10px;
+}

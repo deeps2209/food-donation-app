@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(to right,#4facfe,#00f2fe);
+        }
+
+        .register-box{
+            width:400px;
+            background:white;
+            padding:40px;
+            border-radius:20px;
+            box-shadow:0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .register-box h1{
+            text-align:center;
+            margin-bottom:30px;
+            color:#2563eb;
+            font-size:32px;
+        }
+
+        .input-group{
+            margin-bottom:20px;
+        }
+
+        .input-group label{
+            display:block;
+            margin-bottom:8px;
+            font-weight:bold;
+            color:#444;
+        }
+
+        .input-group input,
+        .input-group select{
+            width:100%;
+            padding:14px;
+            border:1px solid #ccc;
+            border-radius:10px;
+            font-size:16px;
+            outline:none;
+        }
+
+        .input-group input:focus,
+        .input-group select:focus{
+            border:1px solid #2563eb;
+        }
+
+        .btn{
+            width:100%;
+            padding:14px;
+            background:#2563eb;
+            color:white;
+            border:none;
+            border-radius:10px;
+            font-size:18px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            background:#1e40af;
+        }
+
+        .login-link{
+            text-align:center;
+            margin-top:20px;
+        }
+
+        .login-link a{
+            text-decoration:none;
+            color:#2563eb;
+            font-weight:bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="register-box">
+
+    <h1>Create Account</h1>
+
+    <form method="POST">
+
+        <div class="input-group">
+
+            <label>Username</label>
+
+            <input type="text"
+                   name="username"
+                   placeholder="Enter Username"
+                   required>
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Password</label>
+
+            <input type="password"
+                   name="password"
+                   placeholder="Enter Password"
+                   required>
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Select Role</label>
+
+            <select name="role">
+
+                <option>Donor</option>
+                <option>NGO</option>
+                <option>Volunteer</option>
+                <option>Admin</option>
+
+            </select>
+
+        </div>
+
+        <button class="btn" type="submit">
+            Register
+        </button>
+
+    </form>
+
+    <div class="login-link">
+
+        Already have an account?
+        <a href="/">Login</a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

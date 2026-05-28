@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Donation Status</h1>
+
+{% for d in donations %}
+<p>
+
+{{ d.food }}
+-
+{{ d.status }}
+
+</p>
+
+{% endfor %}
+
+</body>
+</html>

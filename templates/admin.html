@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:#f4f7fc;
+            padding:30px;
+        }
+
+        .container{
+            max-width:1400px;
+            margin:auto;
+        }
+
+        .title{
+            text-align:center;
+            margin-bottom:30px;
+        }
+
+        .title h1{
+            color:#1e3a8a;
+            font-size:45px;
+        }
+
+        .cards{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:20px;
+            margin-bottom:35px;
+        }
+
+        .card{
+            background:white;
+            padding:25px;
+            border-radius:15px;
+            box-shadow:0 4px 15px rgba(0,0,0,0.08);
+            text-align:center;
+        }
+
+        .card h2{
+            color:#2563eb;
+            margin-bottom:10px;
+        }
+
+        .card p{
+            font-size:28px;
+            font-weight:bold;
+            color:#333;
+        }
+
+        .table-container{
+            background:white;
+            padding:25px;
+            border-radius:20px;
+            box-shadow:0 4px 15px rgba(0,0,0,0.08);
+            overflow-x:auto;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+        }
+
+        thead{
+            background:#2563eb;
+            color:white;
+        }
+
+        thead th{
+            padding:18px;
+            font-size:17px;
+        }
+
+        tbody td{
+            padding:18px;
+            text-align:center;
+            border-bottom:1px solid #ddd;
+            font-size:16px;
+        }
+
+        .status{
+            font-weight:bold;
+            color:#f59e0b;
+        }
+
+        .completed{
+            color:green;
+        }
+
+        .pending{
+            color:red;
+        }
+
+        .live-box{
+            margin-top:35px;
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:20px;
+        }
+
+        .live-card{
+            background:white;
+            padding:25px;
+            border-radius:15px;
+            box-shadow:0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .live-card h3{
+            color:#1e3a8a;
+            margin-bottom:15px;
+        }
+
+        .live-card p{
+            margin:10px 0;
+            color:#444;
+        }
+
+        .live-card span{
+            font-weight:bold;
+            color:#2563eb;
+        }
+
+        @media(max-width:1000px){
+
+            .cards{
+                grid-template-columns:repeat(2,1fr);
+            }
+
+            .live-box{
+                grid-template-columns:1fr;
+            }
+
+        }
+
+        @media(max-width:700px){
+
+            .cards{
+                grid-template-columns:1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="title">
+
+        <h1>Admin Dashboard</h1>
+
+    </div>
+
+
+    <!-- Top Cards -->
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h2>Total Donors</h2>
+
+            <p>25</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Total NGOs</h2>
+
+            <p>10</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Volunteers</h2>
+
+            <p>18</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Food Donations</h2>
+
+            <p>42</p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Main Table -->
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Donor</th>
+                    <th>Food Item</th>
+                    <th>Quantity</th>
+                    <th>NGO</th>
+                    <th>Volunteer</th>
+                    <th>Volunteer Contact</th>
+                    <th>Vehicle</th>
+                    <th>Location</th>
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>Deepika</td>
+                    <td>Biriyani</td>
+                    <td>20 Plates</td>
+                    <td>Akshaya Patra Foundation</td>
+                    <td>Rahul Kumar</td>
+                    <td>9876543210</td>
+                    <td>Bike</td>
+                    <td>Hulimavu</td>
+
+                    <td class="status">
+                        Volunteer Reached Donor
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Sudhakar</td>
+                    <td>Rice Meals</td>
+                    <td>50 Plates</td>
+                    <td>Helping Hands NGO</td>
+                    <td>Arjun</td>
+                    <td>9876501234</td>
+                    <td>Van</td>
+                    <td>BTM Layout</td>
+
+                    <td class="completed">
+                        Delivered Successfully
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Bhoomika</td>
+                    <td>Chapathi</td>
+                    <td>30 Plates</td>
+                    <td>Smile Foundation</td>
+                    <td>Akash</td>
+                    <td>9123456780</td>
+                    <td>Scooter</td>
+                    <td>Jayanagar</td>
+
+                    <td class="pending">
+                        Waiting for Pickup
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+
+    <!-- Live Tracking Cards -->
+
+    <div class="live-box">
+
+        <div class="live-card">
+
+            <h3>Donor Information</h3>
+
+            <p><span>Name :</span> Deepika</p>
+
+            <p><span>Contact :</span> 9876543210</p>
+
+            <p><span>Food :</span> Biriyani</p>
+
+            <p><span>Quantity :</span> 20 Plates</p>
+
+        </div>
+
+
+        <div class="live-card">
+
+            <h3>NGO Information</h3>
+
+            <p><span>NGO :</span> Akshaya Patra Foundation</p>
+
+            <p><span>Manager :</span> Ramesh</p>
+
+            <p><span>Contact :</span> 9988776655</p>
+
+            <p><span>Location :</span> Bangalore</p>
+
+        </div>
+
+
+        <div class="live-card">
+
+            <h3>Volunteer Tracking</h3>
+
+            <p><span>Name :</span> Rahul Kumar</p>
+
+            <p><span>Vehicle :</span> Bike</p>
+
+            <p><span>Current Location :</span> Hulimavu</p>
+
+            <p><span>Status :</span> On the Way</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
