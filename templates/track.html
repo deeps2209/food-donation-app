@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tracking</title>
+</head>
+
+<body>
+
+<h1>Delivery Tracking</h1>
+
+<div style="border:1px solid black; padding:20px;">
+
+    <h2>Donation Details</h2>
+
+    <p><b>Food:</b> {{ donation.food }}</p>
+
+    <p><b>Quantity:</b> {{ donation.quantity }}</p>
+
+    <p><b>Location:</b> {{ donation.location }}</p>
+
+    <p><b>Assigned NGO:</b> {{ donation.ngo }}</p>
+
+    <p><b>Assigned Volunteer:</b>
+        {{ donation.volunteer }}
+    </p>
+
+    <p><b>AI Optimized Route:</b>
+        {{ donation.route }}
+    </p>
+
+    <p><b>Status:</b> {{ donation.status }}</p>
+
+</div>
+
+</body>
+</html>
