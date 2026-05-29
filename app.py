@@ -277,6 +277,7 @@ def accept_food():
     )
 
 
+
 @app.route("/track_delivery")
 def track_delivery():
 
@@ -295,8 +296,12 @@ def track_delivery():
 # ---------------------------------------------------
 # NGO ACCEPT
 # -z--------------------------------------------------
-@app.route('/accept/<ngo_name>/<ngo_location>')
-def accept(ngo_name, ngo_location):
+@app.route('/accept')
+def accept():
+
+    ngo_name = request.args.get('name')
+
+    ngo_location = request.args.get('location')
 
     return render_template(
         'accept.html',
@@ -408,7 +413,9 @@ def ai_match():
         'ai_match.html',
         ngos=ngos
     )
-
+@app.route('/track')
+def track():
+    return redirect('/track_delivery')
 
 if __name__ == '__main__':
 

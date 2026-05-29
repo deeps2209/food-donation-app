@@ -55,26 +55,27 @@
 <body>
 
     <h1>AI NGO Matching</h1>
+{% for ngo in ngos %}
 
-    {% for ngo in ngos %}
+<div class="card">
 
-    <div class="card">
-
-        <div class="ngo-name">
-            {{ ngo.name }}
-        </div>
-
-        <div class="location">
-            Location: {{ ngo.location }}
-        </div>
-
-        <button>
-            Select NGO
-        </button>
-
+    <div class="ngo-name">
+        {{ ngo.name }}
     </div>
 
-    {% endfor %}
+    <div class="location">
+        Location: {{ ngo.location }}
+    </div>
+
+    <a href="/accept?name={{ ngo.name }}&location={{ ngo.location }}" class="btn">
+
+        Select NGO
+
+    </a>
+
+</div>
+
+{% endfor %}
 
 </body>
 
