@@ -173,6 +173,7 @@ def login():
     if user:
 
         session['role'] = user.role
+        session['username'] = user.username
 
         if user.role == "Donor":
 
@@ -236,120 +237,98 @@ def food():
 # NGO DASHBOARD
 # ---------------------------------------------------
 
-@app.route('/ngo')
+@app.route("/ngo")
 def ngo():
+    return render_template("ngo.html")
 
-    foods = Food.query.all()
+
+# ---------------- NGO FEATURES ---------------- #
+
+@app.route("/view_donations")
+def view_donations():
+
+    donations = [
+        {
+            "food": "Rice Packets",
+            "donor": "Bhoomika",
+            "location": "BTM"
+        },
+        {
+            "food": "Vegetable Curry",
+            "donor": "Rahul",
+            "location": "Koramangala"
+        }
+    ]
 
     return render_template(
-        'ngo.html',
-        foods=foods
+        "view_donations.html",
+        donations=donations
+    )
+
+
+@app.route("/accept_food")
+def accept_food():
+
+    message = "Food Donation Accepted Successfully!"
+
+    return render_template(
+        "accept_food.html",
+        message=message
+    )
+
+
+@app.route("/track_delivery")
+def track_delivery():
+
+    tracking = {
+        "status": "On the Way",
+        "driver": session.get('username'),
+        "eta": "20 Minutes"
+    }
+
+    return render_template(
+        "track_delivery.html",
+        tracking=tracking
     )
 
 
 # ---------------------------------------------------
 # NGO ACCEPT
-# ---------------------------------------------------
+# -z--------------------------------------------------
+@app.route('/accept/<ngo_name>/<ngo_location>')
+def accept(ngo_name, ngo_location):
 
-@app.route('/accept/<int:id>')
-def accept(id):
+    return render_template(
+        'accept.html',
+        ngo_name=ngo_name,
+        ngo_location=ngo_location
+    )
 
-    food = Food.query.get(id)
-
-    if food:
-
-        food.status = "Accepted"
-
-        db.session.commit()
-
-    return redirect('/ngo')
-
-
-# ---------------------------------------------------
-# NGO REJECT
-# ---------------------------------------------------
 
 @app.route('/reject/<int:id>')
 def reject(id):
 
-    food = Food.query.get(id)
+    return f"""
+    <h1>Donation {id} Rejected</h1>
 
-    if food:
-
-        food.status = "Rejected"
-
-        db.session.commit()
-
-    return redirect('/ngo')
-
-
-# ---------------------------------------------------
-# NGO CLAIM
-# ---------------------------------------------------
-
-@app.route('/claim/<int:id>')
-def claim(id):
-
-    food = Food.query.get(id)
-
-    food.status = "Claimed"
-
-    food.matched_ngo = "Helping Hands NGO"
-
-    food.ngo_location = "BTM"
-
-    db.session.commit()
-
-    return redirect('/ngo')
-
+    <h2>Donor Notification Sent</h2>
+    """
 
 # ---------------------------------------------------
 # VOLUNTEER DASHBOARD
 # ---------------------------------------------------
 
+
 @app.route('/volunteer')
 def volunteer():
 
-    foods = Food.query.filter_by(
-        status="Claimed"
-    ).all()
-
-    route_data = []
-
-    for food in foods:
-
-        distance, eta, map_link = ai_route_optimization(
-
-            food.location,
-
-            food.ngo_location
-        )
-
-        route_data.append({
-
-            "id": food.id,
-
-            "food_name": food.food_name,
-
-            "quantity": food.quantity,
-
-            "donor_location": food.location,
-
-            "ngo_location": food.ngo_location,
-
-            "distance": distance,
-
-            "eta": eta,
-
-            "map_link": map_link,
-
-            "status": food.status
-        })
+    foods = Food.query.all()
 
     return render_template(
         'volunteer.html',
-        routes=route_data
+        foods=foods
     )
+
 
 
 # ---------------------------------------------------
@@ -406,17 +385,30 @@ def admin():
 @app.route('/ai_match')
 def ai_match():
 
-    foods = Food.query.all()
+    ngos = [
+
+        {
+            "name": "Helping Hands NGO",
+            "location": "BTM"
+        },
+
+        {
+            "name": "Food Care NGO",
+            "location": "Koramangala"
+        },
+
+        {
+            "name": "Hope NGO",
+            "location": "Electronic City"
+        }
+
+    ]
 
     return render_template(
         'ai_match.html',
-        foods=foods
+        ngos=ngos
     )
 
-
-# ---------------------------------------------------
-# RUN APP
-# ---------------------------------------------------
 
 if __name__ == '__main__':
 

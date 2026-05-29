@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Donation Accepted</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            background:#f5f5f5;
+            padding:40px;
+        }
+
+        .box{
+            background:white;
+            padding:30px;
+            border-radius:15px;
+            margin-bottom:20px;
+            box-shadow:0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        h1{
+            color:green;
+        }
+
+        h2{
+            color:#333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Donation Accepted Successfully</h1>
+
+    <div class="box">
+        <h2>Notification Sent To Donor</h2>
+        <p>{{ donor_message }}</p>
+    </div>
+
+    <div class="box">
+        <h2>Notification Sent To Admin</h2>
+        <p>{{ admin_message }}</p>
+    </div>
+
+</body>
+</html>

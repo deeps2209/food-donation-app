@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Track Delivery</title>
+
+    <style>
+
+        body{
+            margin:0;
+            padding:0;
+            font-family:Arial;
+            background:#f4f7ff;
+        }
+
+        .container{
+            width:60%;
+            margin:60px auto;
+        }
+
+        .card{
+            background:white;
+            padding:40px;
+            border-radius:20px;
+            box-shadow:0px 5px 15px rgba(0,0,0,0.1);
+        }
+
+        h1{
+            text-align:center;
+            color:#222;
+            margin-bottom:35px;
+        }
+
+        .info{
+            margin:25px 0;
+            padding:20px;
+            border-radius:12px;
+            background:#f8f9ff;
+        }
+
+        .label{
+            font-size:20px;
+            font-weight:bold;
+            color:#333;
+        }
+
+        .value{
+            font-size:22px;
+            color:#555;
+            margin-top:8px;
+        }
+
+        .status{
+            color:green;
+            font-weight:bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h1>🚚 Delivery Tracking</h1>
+
+            <div class="info">
+
+                <div class="label">Status</div>
+
+                <div class="value status">
+                    {{ tracking.status }}
+                </div>
+
+            </div>
+
+            <div class="info">
+
+                <div class="label">Driver</div>
+
+                <div class="value">
+                    {{ tracking.driver }}
+                </div>
+
+            </div>
+
+            <div class="info">
+
+                <div class="label">Estimated Arrival Time</div>
+
+                <div class="value">
+                    {{ tracking.eta }}
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

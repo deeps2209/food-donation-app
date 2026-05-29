@@ -1,36 +1,112 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <title>NGO Dashboard</title>
+
+    <style>
+
+        body{
+
+            margin:0;
+            padding:0;
+
+            font-family:Arial;
+
+            background:url('/static/bg.jpg');
+
+            background-size:cover;
+
+            height:100vh;
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+        }
+
+        .container{
+
+            background:rgba(255,255,255,0.9);
+
+            padding:40px;
+
+            width:450px;
+
+            border-radius:20px;
+
+            box-shadow:0 0 20px rgba(0,0,0,0.2);
+
+            text-align:center;
+        }
+
+        h1{
+
+            color:green;
+
+            margin-bottom:30px;
+        }
+
+        h2{
+            color:black;
+        }
+
+        button{
+
+            background:#32CD32;
+
+            color:white;
+
+            border:none;
+
+            padding:15px 30px;
+
+            border-radius:8px;
+
+            font-size:18px;
+
+            cursor:pointer;
+
+            margin-top:10px;
+
+            margin-bottom:20px;
+        }
+
+        button:hover{
+
+            background:green;
+        }
+
+    </style>
+
 </head>
 
 <body>
 
-<h1>NGO Dashboard</h1>
+<div class="container">
 
-{% for d in donations %}
+    <h1>NGO Dashboard</h1>
 
-<div style="border:1px solid black; padding:20px; margin:20px;">
+    <h2>Available Donations</h2>
 
-    <h3>Food: {{ d.food }}</h3>
+    <a href="/view_donations">
+        <button>View Donations</button>
+    </a>
 
-    <p>Quantity: {{ d.quantity }}</p>
+    <h2>Accept Donation</h2>
 
-    <p>Location: {{ d.location }}</p>
+    <a href="/accept_food">
+        <button>Accept Food</button>
+    </a>
 
-    <p>AI Recommended NGO:
-        <b>{{ d.ngo }}</b>
-    </p>
+    <h2>Track Delivery</h2>
 
-    <p>Status: {{ d.status }}</p>
-
-    <a href="/accept/{{ d.id }}">
-        <button>Accept Donation</button>
+    <a href="/track_delivery">
+        <button>Track</button>
     </a>
 
 </div>
-
-{% endfor %}
 
 </body>
 </html>

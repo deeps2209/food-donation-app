@@ -1,103 +1,88 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 
     <title>Volunteer Dashboard</title>
 
-    <link rel="stylesheet"
-    href="{{ url_for('static', filename='style.css') }}">
+    <style>
+
+        body{
+            font-family:Arial;
+            background:#f4f7ff;
+            margin:0;
+            padding:0;
+        }
+
+        h1{
+            text-align:center;
+            margin-top:40px;
+            color:#222;
+        }
+
+        .container{
+            width:80%;
+            margin:auto;
+        }
+
+        .card{
+            background:white;
+            padding:25px;
+            margin:20px 0;
+            border-radius:15px;
+            box-shadow:0px 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .card h2{
+            color:#333;
+        }
+
+        .card p{
+            font-size:18px;
+            color:#555;
+        }
+
+        .btn{
+            background:green;
+            color:white;
+            padding:10px 20px;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+        }
+
+    </style>
 
 </head>
 
 <body>
 
-<div class="volunteer-container">
-
     <h1>Volunteer Dashboard</h1>
 
-    <div class="volunteer-card">
+    <div class="container">
 
-        <h2>Volunteer Information</h2>
+        {% for food in foods %}
 
-        <div class="details">
+        <div class="card">
 
-            <p>
-            <b>Name :</b> Rahul Sharma
-            </p>
+            <h2>{{ food.food_name }}</h2>
 
-            <p>
-            <b>Contact Number :</b> 9876543210
-            </p>
+            <p><b>Quantity:</b> {{ food.quantity }}</p>
 
-            <p>
-            <b>Vehicle Type :</b> Bike
-            </p>
+            <p><b>Location:</b> {{ food.location }}</p>
 
-            <p>
-            <b>Current Location :</b> JP Nagar, Bangalore
-            </p>
+            <p><b>Donor:</b> {{ food.donor }}</p>
 
-            <p>
-            <b>Assigned NGO :</b> Akshaya Patra Foundation
-            </p>
+            <a href="/track_delivery">
+                <button class="btn">
+                    Start Delivery
+                </button>
+            </a>
 
         </div>
 
-    </div>
-
-    <div class="delivery-card">
-
-        <h2>Pickup & Delivery Details</h2>
-
-        <table>
-
-            <tr>
-                <th>Food</th>
-                <th>Pickup</th>
-                <th>Destination</th>
-                <th>Status</th>
-            </tr>
-
-            <tr>
-
-                <td>Biriyani</td>
-
-                <td>Hulimavu</td>
-
-                <td>Akshaya Patra NGO</td>
-
-                <td>
-                    <span class="delivery-status">
-                        On The Way
-                    </span>
-                </td>
-
-            </tr>
-
-        </table>
+        {% endfor %}
 
     </div>
-
-    <div class="tracking-card">
-
-        <h2>Live Delivery Tracking</h2>
-
-        <div class="progress-bar">
-
-            <div class="progress"></div>
-
-        </div>
-
-        <p class="tracking-text">
-        Volunteer is currently delivering the food
-        to the NGO location.
-        </p>
-
-    </div>
-
-</div>
 
 </body>
-
 </html>

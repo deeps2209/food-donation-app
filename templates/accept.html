@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>NGO Accepted</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background:#f4f6f9;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .card{
+            background:white;
+            padding:40px;
+            width:450px;
+            border-radius:15px;
+            box-shadow:0px 0px 15px rgba(0,0,0,0.1);
+        }
+
+        h1{
+            color:green;
+        }
+
+        .info{
+            margin-top:20px;
+            font-size:20px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+    <h1>✅ NGO Selected Successfully</h1>
+
+    <div class="info">
+
+        <p><b>NGO Name:</b> {{ ngo_name }}</p>
+
+        <p><b>Location:</b> {{ ngo_location }}</p>
+
+    </div>
+
+</div>
+
+</body>
+</html>
